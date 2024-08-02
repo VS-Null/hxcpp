@@ -292,7 +292,7 @@ class Compiler
       catch(e:Dynamic) { }
    }
 
-   public function compile(inFile:File,inTid:Int,headerFunc:Void->Void,pchTimeStamp:Null<Float>)
+   public function compile(inFile:File,inTid:Int,headerFunc:Void->Void,pchTimeStamp:Null<Float>,inProgess:Null<Progress>)
    {
       var obj_name = getObjName(inFile);
       var args = getArgs(inFile);
@@ -385,6 +385,11 @@ class Compiler
          }
          fileName += " \x1b[3m" + tagInfo + "\x1b[0m";
 
+         if (inProgess!=null)
+         {
+            inProgess.progress(1);
+            fileName = inProgess.getProgress() + fileName;
+         }
 
          if (inTid >= 0)
          {
