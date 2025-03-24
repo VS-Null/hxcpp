@@ -1906,7 +1906,7 @@ class BuildTool
             else if ( (new EReg("window","i")).match(os) )
             {
                defines.set("windows_host","1");
-               defines.set("ANDROID_HOST","windows");
+               defines.set("ANDROID_HOST","windows-x86_64");
             }
             else if ( (new EReg("linux","i")).match(os) )
                defines.set("ANDROID_HOST","linux-x86_64");
