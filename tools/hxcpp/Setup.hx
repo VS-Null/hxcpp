@@ -318,21 +318,6 @@ class Setup
       }
    }
 
-
-   public static function isRaspberryPi()
-   {
-       var modelFile = '/sys/firmware/devicetree/base/model';
-       if( !FileSystem.exists( modelFile ) )
-           return false;
-       try {
-           var model = sys.io.File.getContent( modelFile );
-           return ~/Raspberry/.match( model );
-       } catch(e:Dynamic) {
-           trace( e );
-       }
-       return false;
-   }
-
    static public function startPdbServer()
    {
       var oldPath = Sys.getCwd();

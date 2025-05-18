@@ -31,7 +31,6 @@
 <include name="toolchain/gcc-toolchain.xml"/>
 <set name="noM32" value="1" if="HXCPP_NO_M32" />
 <set name="noM32" value="1" if="HXCPP_M64" />
-<set name="noM32" value="1" if="rpi" />
 <set name="noM32" value="1" if="HXCPP_ARM64" />
 <set name="noM64" value="1" if="HXCPP_ARM64" />
 
@@ -49,7 +48,6 @@
   <flag value="-Wno-overflow" />
   <cppflag value="-Wno-invalid-offsetof" />
   <flag value="-DHX_LINUX"/>
-  <flag value="-DRASPBERRYPI=RASPBERRYPI" if="rpi"/>
   <flag value="-DHXCPP_MULTI_THREADED" if="HXCPP_MULTI_THREADED"/>
   <flag value="-DHXCPP_BIG_ENDIAN" if="HXCPP_BIG_ENDIAN"/>
   <include name="toolchain/common-defines.xml" />
