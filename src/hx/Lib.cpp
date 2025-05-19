@@ -352,13 +352,21 @@ String __hxcpp_get_bin_dir()
 {
    return
 #if defined(HX_WINRT)
-  #ifdef HXCPP_M64
+  #ifdef HXCPP_ARM64
+    HX_CSTRING("WinRTArm64");
+  #elif defined(HXCPP_ARMV7)
+    HX_CSTRING("WinRTArm");
+  #elif defined(HXCPP_M64)
     HX_CSTRING("WinRT64");
   #else
     HX_CSTRING("WinRT");
   #endif
 #elif defined(_WIN32)
-  #ifdef HXCPP_M64
+  #ifdef HXCPP_ARM64
+    HX_CSTRING("WindowsArm64");
+  #elif defined(HXCPP_ARMV7)
+    HX_CSTRING("WindowsArm");
+  #elif defined(HXCPP_M64)
     HX_CSTRING("Windows64");
   #else
     HX_CSTRING("Windows");
@@ -418,7 +426,7 @@ String __hxcpp_get_dll_extension()
     HX_CSTRING(".sim.dylib");
 #elif defined(__APPLE__)
     HX_CSTRING(".dylib");
-#elif defined(ANDROID) || defined(GPH) || defined(WEBOS)  || defined(BLACKBERRY) || defined(EMSCRIPTEN) || defined(TIZEN)
+#elif defined(ANDROID) || defined(GPH) || defined(WEBOS) || defined(BLACKBERRY) || defined(EMSCRIPTEN) || defined(TIZEN)
     HX_CSTRING(".so");
 #else
     HX_CSTRING(".dso");

@@ -16,14 +16,6 @@
       <set name="HXCPP_AR" value="${HXCPP_XLINUX32_AR}" />
       <set name="HXCPP_RANLIB" value="${HXCPP_XLINUX32_RANLIB}" />
    </section>
-   <section if="rpi">
-      <path name="c:/SysGCC/Raspberry/bin/" unless="HXCPP_XCOMPILE_RPI_PATH" />
-      <path name="${HXCPP_XCOMPILE_RPI_PATH}" if="HXCPP_XCOMPILE_RPI_PATH" />
-      <set name="CXX" value="arm-linux-gnueabihf-g++" />
-      <set name="HXCPP_STRIP" value="arm-linux-gnueabihf-strip" />
-      <set name="HXCPP_AR" value="arm-linux-gnueabihf-ar" />
-      <set name="HXCPP_RANLIB" value="arm-linux-gnueabihf-ranlib" />
-   </section>
 </section>
 
 <set name="HXCPP_CPP11" value="1" unless="HXCPP_NO_CPP11 || HXCPP_CPP17" />
@@ -31,8 +23,8 @@
 <include name="toolchain/gcc-toolchain.xml"/>
 <set name="noM32" value="1" if="HXCPP_NO_M32" />
 <set name="noM32" value="1" if="HXCPP_M64" />
-<set name="noM32" value="1" if="HXCPP_ARM64" />
-<set name="noM64" value="1" if="HXCPP_ARM64" />
+<set name="noM32" value="1" if="HXCPP_ARM64 || HXCPP_ARMV7" />
+<set name="noM64" value="1" if="HXCPP_ARM64 || HXCPP_ARMV7" />
 
 <compiler id="linux" exe="g++" if="linux">
   <exe name="${CXX}" if="CXX" />
