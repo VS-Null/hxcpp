@@ -61,6 +61,7 @@
   <flag value="-static"/>
   <flag value="-static-libgcc"/>
   <flag value="-static-libstdc++"/>
+  <flag value ="-Wl,--allow-multiple-definition"/>
   <flag value="-L${MINGW_ROOT}/lib/libs" />
   <ext value=".dll"/>
   <outflag value="-o "/>
@@ -76,6 +77,7 @@
   <flag value="-static"/>
   <flag value="-static-libgcc" />
   <flag value="-static-libstdc++" />
+  <flag value ="-Wl,--allow-multiple-definition"/>
   <flag value="-L${MINGW_ROOT}/lib/libs" />
   <ext value=".exe"/>
   <outflag value="-o "/>
