@@ -20,5 +20,5 @@ setlocal enabledelayedexpansion
 		echo Warning: Could not find Visual Studio VsDevCmd
 	)
 ) else (
-	echo Error: arm64 is not automatically supported for this version of VC.
+	echo Error: arm is not automatically supported for this version of VC.
 )
