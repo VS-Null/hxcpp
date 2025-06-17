@@ -85,7 +85,7 @@
   <flag value="-O2" tag="release" />
   <flag value="-bigobj" if="debug"  />
   <flag value="-Os" tag="optim-size" />
-  <flag value="-GL" unless="debug || HXCPP_ARM64"/>
+  <!--<flag value="-GL" unless="debug || HXCPP_ARM64"/>-->
 
   <flag value="-FS" if="HXCPP_FORCE_PDB_SERVER" />
   <flag value="-Oy-"/>
@@ -122,7 +122,7 @@
   <flag value="-debug:full" if="HXCPP_DEBUG_LINK" />
   <flag value="-OPT:REF,ICF" if="HXCPP_PDB_FILE"/>
   <flag value="-pdb:${HXCPP_PDB_FILE}" if="HXCPP_PDB_FILE" />
-  <flag value="-LTCG:INCREMENTAL" unless="debug || HXCPP_ARM64"/>
+  <!--<flag value="-LTCG:INCREMENTAL" unless="debug || HXCPP_ARM64"/>-->
   <flag value="-map:${HXCPP_MAP_FILE}" if="HXCPP_MAP_FILE" />
   <flag value="-NOIMPLIB" if="HXCPP_NO_IMPLIB" />
   <flag value="-NOEXP" if="HXCPP_NO_IMPLIB" />
@@ -145,7 +145,7 @@
   <flag value="-map:${HXCPP_MAP_FILE}" if="HXCPP_MAP_FILE" />
   <flag value="-pdb:${HXCPP_PDB_FILE}" if="HXCPP_PDB_FILE" />
   <flag value="-INCREMENTAL:NO" if="HXCPP_PDB_FILE" />
-  <flag value="-LTCG:INCREMENTAL" unless="debug || HXCPP_ARM64"/>
+  <!--<flag value="-LTCG:INCREMENTAL" unless="debug || HXCPP_ARM64"/>-->
   <flag value="-subsystem:windows${SUBSYSTEM_VER}" if="SUBSYSTEMWINDOWS" />
   <flag value="-subsystem:console${SUBSYSTEM_VER}" if="SUBSYSTEMCONSOLE" />
   <flag value="-NOIMPLIB" if="HXCPP_NO_IMPLIB" />
@@ -172,7 +172,7 @@
   <flag value="-nologo"/>
   <flag value="-machine:${MACHINE}"/>
   <flag value="-debug" if="HXCPP_DEBUG_LINK" />
-  <flag value="-LTCG:INCREMENTAL" unless="debug || HXCPP_ARM64"/>
+  <!--<flag value="-LTCG:INCREMENTAL" unless="debug || HXCPP_ARM64"/>-->
   <flag value="-subsystem:windows" />
   <flag value="-MANIFEST:NO" />
   <flag value="-WINMD" />
@@ -188,7 +188,7 @@
 </linker>
 
 <linker id="static_link" exe="lib.exe" if="windows">
-  <flag value="-LTCG:INCREMENTAL" unless="debug || HXCPP_ARM64"/>
+  <!--<flag value="-LTCG:INCREMENTAL" unless="debug || HXCPP_ARM64"/>-->
   <fromfile value="@"/>
   <flag value="-nologo"/>
   <flag value="-IGNORE:4264" if="winrt" />

@@ -82,7 +82,7 @@
   </section>
 
   <include name="toolchain/common-defines.xml" />
-  <flag value="-flto" unless="debug"/>
+  <!--<flag value="-flto" unless="debug"/>-->
   <flag value="-I${HXCPP}/include"/>
   <flag value="-Iinclude"/>
   <flag value="-fpic"/>
