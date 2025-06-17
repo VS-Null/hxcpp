@@ -414,7 +414,7 @@ class Compiler
             var output = "";
 
             if (inProgress != null)
-               output = ['-', inProgress.getFormattedProgress(), fileName, tagInfo].join(" ");
+               output = [inProgress.getFormattedProgress(), '-', fileName, tagInfo].join(" ");
             else
                output = ['-', fileName, tagInfo].join(" ");
 
