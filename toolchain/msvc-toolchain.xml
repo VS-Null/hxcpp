@@ -85,7 +85,7 @@
   <flag value="-O2" tag="release" />
   <flag value="-bigobj" if="debug"  />
   <flag value="-Os" tag="optim-size" />
-  <flag value="-GL" unless="debug"/>
+  <flag value="-GL" unless="debug || HXCPP_ARM64"/>
 
   <flag value="-FS" if="HXCPP_FORCE_PDB_SERVER" />
   <flag value="-Oy-"/>
