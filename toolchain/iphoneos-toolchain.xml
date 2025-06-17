@@ -71,7 +71,7 @@
   <flag value="-DIPHONE=IPHONE"/>
   <flag value="-DIPHONEOS=IPHONEOS"/>
   <include name="toolchain/common-defines.xml" />
-  <flag value="-flto" unless="debug"/>
+  <flag value="-flto=thin" unless="debug"/>
   <flag value="-DHXCPP_BIG_ENDIAN" if="HXCPP_BIG_ENDIAN"/>
   <flag value="-I${HXCPP}/include"/>
   <!-- Removed for iOS 8 (no need) -->
@@ -90,6 +90,7 @@
 <linker id="dll" exe="g++" >
   <exe name="xcrun --sdk iphoneos${IPHONE_VER} g++" if="HXCPP_GCC" />
   <exe name="xcrun --sdk iphoneos${IPHONE_VER} clang++" />
+  <flag value="-Wl,-cache_path_lto,/tmp" unless="debug"/>
   <cppflag value="-stdlib=libstdc++" if="FORCE_LIBGCC" />
   <cppflag value="-stdlib=libc++" if="HXCPP_CPP11 || HXCPP_CPP17" />
   <mmflag value="-stdlib=libstdc++" if="FORCE_LIBGCC" />
