@@ -62,7 +62,7 @@
 
   <!-- Options -->
   <cppflag value="-std=c++17" if="HXCPP_CPP17" />
-  <flag value="-flto=thin" unless="debug"/>
+  <!--<flag value="-flto=thin" unless="debug"/>-->
   <flag value="-fvisibility=hidden"/>
   <flag value="-ffunction-sections"/>
   <flag value="-fstack-protector"/>
