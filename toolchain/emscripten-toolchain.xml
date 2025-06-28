@@ -87,6 +87,7 @@
   <section unless="HXCPP_LINK_NO_EXCEPTIONS" >
      <flag name="-s" value="DISABLE_EXCEPTION_CATCHING=0" if="HXCPP_NO_WASM_EXEPTIONS" />
      <flag value="-fwasm-exceptions" unless="HXCPP_NO_WASM_EXEPTIONS" />
+     <flag name="-s" value="SUPPORT_LONGJMP=wasm" unless="HXCPP_NO_WASM_EXEPTIONS" />
   </section>
   <flag value="${HXCPP_OPTIM_LEVEL}" />
   <flag value="-fpic" if="HXCPP_EMSCRIPTEN_FPIC" />
@@ -152,6 +153,7 @@
   <section unless="HXCPP_LINK_NO_EXCEPTIONS" >
      <flag name="-s" value="DISABLE_EXCEPTION_CATCHING=0" if="HXCPP_NO_WASM_EXEPTIONS" />
      <flag value="-fwasm-exceptions" unless="HXCPP_NO_WASM_EXEPTIONS" />
+     <flag name="-s" value="SUPPORT_LONGJMP=wasm" unless="HXCPP_NO_WASM_EXEPTIONS" />
   </section>
 
   <!-- <flag value="-DBUILD_AS_SHARED_LIBRARY" /> -->
@@ -198,6 +200,7 @@
   <section unless="HXCPP_LINK_NO_EXCEPTIONS" >
      <flag name="-s" value="DISABLE_EXCEPTION_CATCHING=0" if="HXCPP_NO_WASM_EXEPTIONS" />
      <flag value="-fwasm-exceptions" unless="HXCPP_NO_WASM_EXEPTIONS" />
+     <flag name="-s" value="SUPPORT_LONGJMP=wasm" unless="HXCPP_NO_WASM_EXEPTIONS" />
   </section>
 
   <section if="BINARYEN_METHOD" >
